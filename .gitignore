@@ -1,0 +1,21 @@
+# Dependencies
+Automation Testing/node_modules/
+
+# Environment and sensitive configuration
+Automation Testing/cypress.env.json
+*.env
+.env.*
+
+# Local/unused specs
+Automation Testing/cypress/e2e/TheInternetbyHeroku/
+
+# Local test output media
+Automation Testing/cypress/screenshots/
+Automation Testing/cypress/videos/
+
+# Temporary files
+.DS_Store
+*.log
+Automation Testing/cypress/reports/html/.jsons/
+.claude/
+
