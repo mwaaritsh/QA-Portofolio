@@ -1,0 +1,1915 @@
+{
+  "info": {
+    "_postman_id": "29d70da2-084e-462b-96ba-eced80d5f93f",
+    "name": "API Test - Pharmatrack",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55583529",
+    "_collection_link": "https://go.postman.co/collection/55583529-29d70da2-084e-462b-96ba-eced80d5f93f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET Categories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response contains categories array\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.be.true;",
+              "    pm.expect(jsonData.categories).to.be.an(\"array\");",
+              "    if (jsonData.categories.length > 0) {",
+              "        pm.expect(jsonData.categories[0]).to.have.property(\"id\");",
+              "        pm.expect(jsonData.categories[0]).to.have.property(\"name\");",
+              "        pm.expect(jsonData.categories[0]).to.have.property(\"slug\");",
+              "    }",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/categories",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Categories",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/categories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:26:48 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/categories"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::2kv86-1780993606594-214afa1cd7cd"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"categories\": [\n        {\n            \"id\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n            \"name\": \"Obat Bebas\",\n            \"slug\": \"obat-bebas\",\n            \"icon\": \"pill\",\n            \"sortOrder\": 0,\n            \"isActive\": true,\n            \"createdAt\": \"2026-03-24T16:54:34.000Z\",\n            \"_count\": {\n                \"products\": 6\n            }\n        },\n        {\n            \"id\": \"83cc4d52-414d-473d-aaa4-14fb822ce007\",\n            \"name\": \"Obat Resep\",\n            \"slug\": \"obat-resep\",\n            \"icon\": \"clipboard\",\n            \"sortOrder\": 0,\n            \"isActive\": true,\n            \"createdAt\": \"2026-03-24T16:54:34.000Z\",\n            \"_count\": {\n                \"products\": 2\n            }\n        },\n        {\n            \"id\": \"c5b052d4-149d-4fd4-8974-9e8dcafb4274\",\n            \"name\": \"Vitamin & Suplemen\",\n            \"slug\": \"vitamin-suplemen\",\n            \"icon\": \"heart\",\n            \"sortOrder\": 0,\n            \"isActive\": true,\n            \"createdAt\": \"2026-03-24T16:54:34.000Z\",\n            \"_count\": {\n                \"products\": 2\n            }\n        },\n        {\n            \"id\": \"9796697f-a7ec-4771-b1fb-f9f565df600b\",\n            \"name\": \"Alat Kesehatan\",\n            \"slug\": \"alat-kesehatan\",\n            \"icon\": \"thermometer\",\n            \"sortOrder\": 0,\n            \"isActive\": true,\n            \"createdAt\": \"2026-03-24T16:54:34.000Z\",\n            \"_count\": {\n                \"products\": 2\n            }\n        },\n        {\n            \"id\": \"ee88ac15-21d0-44c6-9ce1-07a3f7019496\",\n            \"name\": \"Perawatan Ibu & Anak\",\n            \"slug\": \"perawatan-ibu-anak\",\n            \"icon\": \"baby\",\n            \"sortOrder\": 0,\n            \"isActive\": true,\n            \"createdAt\": \"2026-03-24T16:54:34.000Z\",\n            \"_count\": {\n                \"products\": 2\n            }\n        },\n        {\n            \"id\": \"03a79977-fdcc-408d-a9f1-5ebf7146b944\",\n            \"name\": \"Antibiotik\",\n            \"slug\": \"antibiotik\",\n            \"icon\": null,\n            \"sortOrder\": 0,\n            \"isActive\": true,\n            \"createdAt\": \"2026-03-27T15:00:53.876Z\",\n            \"_count\": {\n                \"products\": 1\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Products - List Active Products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response body matches schema\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.be.an(\"array\");",
+              "    pm.expect(jsonData.pagination).to.have.all.keys(\"total\", \"page\", \"limit\", \"totalPages\");",
+              "    if (jsonData.data.length > 0) {",
+              "        const activeProduct = jsonData.data.find(p => p.totalStock > 0);",
+              "        if (activeProduct) {",
+              "            pm.environment.set(\"product_id\", activeProduct.id);",
+              "        }",
+              "    }",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/products?status=active",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "active"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Products - List Active Products",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?status=active",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:36:25 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/products"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::9bt2l-1780994179696-a09d1ab24398"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": [\n        {\n            \"id\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n            \"name\": \"Paramex 250mg\",\n            \"slug\": \"paramex-250mg-x4p5x\",\n            \"description\": \"Obat ini memiliki risiko untuk ibu hamil dan janin. Konsultasikan dengan dokter dan pertimbangkan alternatif lain.\\nHati-hati penggunaan pada penderita porphyria akut karena dapat menimbulkan porphyrinogenic\\nBila setelah 5 hari nyeri tidak hilang, segera hubungi dokter\\nObat ini dapat menyebabkan kantuk\\nPenggunaan pada penderita yang mengkonsumsi alkohol dapat meningkatkan resiko kerusakan hati\\nEfek Samping: Mengantuk. Dosis besar atau terapi jangka panjang dapat menyebabkan kerusakan hati\\n\\nKomposisi:\\nParacetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg, Dexchlorpheniramine maleate 1 mg\",\n            \"shortDescription\": \"PARAMEX merupakan obat dengan kandungan Paracetamol, Propyphenazone, Caffeine, Dexchlorpheniramine maleate. Obat ini dapat digunakan untuk meringankan sakit kepala dan sakit gigi\",\n            \"categoryId\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n            \"price\": \"5000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/nwj2huml49-1774715005624.jpg\",\n            \"requiresPrescription\": true,\n            \"minStockAlert\": 1,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-28T16:25:36.564Z\",\n            \"updatedAt\": \"2026-05-05T05:01:55.881Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n                \"name\": \"Obat Bebas\",\n                \"slug\": \"obat-bebas\",\n                \"icon\": \"pill\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 73,\n            \"nearestExpiry\": \"2029-02-22T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"0997240f-45c0-4185-87fe-63f685d16ad2\",\n            \"name\": \"Panadol Biru\",\n            \"slug\": \"panadol-biru-9i00c\",\n            \"description\": \"Pereda nyeri dan demam\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n            \"price\": \"12000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/nbprwdaouc-1774699871632.jpeg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-27T15:00:53.684Z\",\n            \"updatedAt\": \"2026-03-28T12:11:14.027Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n                \"name\": \"Obat Bebas\",\n                \"slug\": \"obat-bebas\",\n                \"icon\": \"pill\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 41,\n            \"nearestExpiry\": \"2026-12-31T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"f1bbce38-b56c-41ab-8909-0ec97b47d24c\",\n            \"name\": \"Salbuvent Expectorant Syrup\",\n            \"slug\": \"salbuvent-expectorant-syrup-a3ptc\",\n            \"description\": \"Obat batuk dan sesak napas.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"83cc4d52-414d-473d-aaa4-14fb822ce007\",\n            \"price\": \"32000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/h2nlljrdeln-1774699846342.jpg\",\n            \"requiresPrescription\": true,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:40.425Z\",\n            \"updatedAt\": \"2026-03-28T12:10:49.100Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"83cc4d52-414d-473d-aaa4-14fb822ce007\",\n                \"name\": \"Obat Resep\",\n                \"slug\": \"obat-resep\",\n                \"icon\": \"clipboard\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 46,\n            \"nearestExpiry\": \"2026-11-30T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"7a0f833c-3739-4c0c-9d54-9889016e0bf2\",\n            \"name\": \"Minyak Telon Lang 100ml\",\n            \"slug\": \"minyak-telon-lang-100ml-5a5lk\",\n            \"description\": \"Menghangatkan tubuh bayi dan meredakan perut kembung.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"ee88ac15-21d0-44c6-9ce1-07a3f7019496\",\n            \"price\": \"22000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/4zqs5u58w5l-1774699807869.jpeg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:40.202Z\",\n            \"updatedAt\": \"2026-03-28T12:10:11.090Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"ee88ac15-21d0-44c6-9ce1-07a3f7019496\",\n                \"name\": \"Perawatan Ibu & Anak\",\n                \"slug\": \"perawatan-ibu-anak\",\n                \"icon\": \"baby\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 121,\n            \"nearestExpiry\": \"2027-04-25T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"65d27c6c-db91-457d-bbb8-5d93309e0c1f\",\n            \"name\": \"Tensimeter Digital Beurer\",\n            \"slug\": \"tensimeter-digital-beurer-6z0ba\",\n            \"description\": \"Alat ukur tekanan darah otomatis pada lengan atas.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"9796697f-a7ec-4771-b1fb-f9f565df600b\",\n            \"price\": \"450000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/5n5s4a4tu45-1774699477118.jpg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:39.989Z\",\n            \"updatedAt\": \"2026-03-28T12:09:35.046Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"9796697f-a7ec-4771-b1fb-f9f565df600b\",\n                \"name\": \"Alat Kesehatan\",\n                \"slug\": \"alat-kesehatan\",\n                \"icon\": \"thermometer\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 14,\n            \"nearestExpiry\": \"2028-05-10T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"5cb9bb5e-e83b-48b3-bfdb-44289ee7d241\",\n            \"name\": \"Neurobion Forte\",\n            \"slug\": \"neurobion-forte-clev8\",\n            \"description\": \"Vitamin B kompleks dosis tinggi untuk kesehatan saraf.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"c5b052d4-149d-4fd4-8974-9e8dcafb4274\",\n            \"price\": \"38000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/obr6wkl6id-1774699293938.jpg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:39.767Z\",\n            \"updatedAt\": \"2026-03-28T12:01:37.447Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"c5b052d4-149d-4fd4-8974-9e8dcafb4274\",\n                \"name\": \"Vitamin & Suplemen\",\n                \"slug\": \"vitamin-suplemen\",\n                \"icon\": \"heart\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 100,\n            \"nearestExpiry\": \"2026-12-31T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"269d852b-5ff5-4b0b-aaa8-38242c6d6e48\",\n            \"name\": \"Betadine Antiseptic 30ml\",\n            \"slug\": \"betadine-antiseptic-30ml-e57lb\",\n            \"description\": \"Cairan antiseptik untuk mencegah infeksi pada luka.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n            \"price\": \"18000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/j8t7c7s1ato-1774699218322.jpeg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:39.495Z\",\n            \"updatedAt\": \"2026-03-28T12:00:22.915Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n                \"name\": \"Obat Bebas\",\n                \"slug\": \"obat-bebas\",\n                \"icon\": \"pill\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 138,\n            \"nearestExpiry\": \"2026-10-01T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"39961211-5750-4c61-919d-71f03de7bf04\",\n            \"name\": \"Susu Formula SGM Eksplor\",\n            \"slug\": \"susu-formula-sgm-eksplor-anmb8\",\n            \"description\": \"Nutrisi lengkap untuk tumbuh kembang anak.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"ee88ac15-21d0-44c6-9ce1-07a3f7019496\",\n            \"price\": \"95000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/pgem5f1fnqm-1774698867207.png\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:39.227Z\",\n            \"updatedAt\": \"2026-03-28T11:54:30.541Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"ee88ac15-21d0-44c6-9ce1-07a3f7019496\",\n                \"name\": \"Perawatan Ibu & Anak\",\n                \"slug\": \"perawatan-ibu-anak\",\n                \"icon\": \"baby\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 60,\n            \"nearestExpiry\": \"2026-08-01T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"936708a4-e032-42dd-bdc6-6d8ff89096b4\",\n            \"name\": \"Thermometer Digital Omron\",\n            \"slug\": \"thermometer-digital-omron-6e9t6\",\n            \"description\": \"Alat pengukur suhu tubuh akurat dengan layar digital.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"9796697f-a7ec-4771-b1fb-f9f565df600b\",\n            \"price\": \"85000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/xzx7rjllhwq-1774698797765.jpg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:39.007Z\",\n            \"updatedAt\": \"2026-03-28T11:53:24.066Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"9796697f-a7ec-4771-b1fb-f9f565df600b\",\n                \"name\": \"Alat Kesehatan\",\n                \"slug\": \"alat-kesehatan\",\n                \"icon\": \"thermometer\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 25,\n            \"nearestExpiry\": \"2028-03-31T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"ed4328f9-1bc6-426a-b6ef-b07b13809520\",\n            \"name\": \"Enervon-C Multivitamin\",\n            \"slug\": \"enervon-c-multivitamin-p3vid\",\n            \"description\": \"Suplemen Vitamin C dan B Kompleks untuk daya tahan tubuh.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"c5b052d4-149d-4fd4-8974-9e8dcafb4274\",\n            \"price\": \"45000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/v9estav1dqk-1774641695574.png\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:38.750Z\",\n            \"updatedAt\": \"2026-03-27T20:01:39.969Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"c5b052d4-149d-4fd4-8974-9e8dcafb4274\",\n                \"name\": \"Vitamin & Suplemen\",\n                \"slug\": \"vitamin-suplemen\",\n                \"icon\": \"heart\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 197,\n            \"nearestExpiry\": \"2027-01-20T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"31233359-ec6f-4c28-94dd-6ac42051e4a6\",\n            \"name\": \"Amoxicillin 500mg\",\n            \"slug\": \"amoxicillin-500mg-r0dga\",\n            \"description\": \"Antibiotik spektrum luas untuk mengobati infeksi bakteri.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"83cc4d52-414d-473d-aaa4-14fb822ce007\",\n            \"price\": \"25000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/xg5zyy1f10i-1774641444600.jpeg\",\n            \"requiresPrescription\": true,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:38.409Z\",\n            \"updatedAt\": \"2026-03-27T19:57:28.662Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"83cc4d52-414d-473d-aaa4-14fb822ce007\",\n                \"name\": \"Obat Resep\",\n                \"slug\": \"obat-resep\",\n                \"icon\": \"clipboard\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 100,\n            \"nearestExpiry\": \"2027-03-28T00:00:00.000Z\",\n            \"isAvailable\": true\n        },\n        {\n            \"id\": \"aaff423c-cffe-4626-9036-d579885b5c96\",\n            \"name\": \"Panadol Extra 500mg\",\n            \"slug\": \"panadol-extra-500mg-7gfge\",\n            \"description\": \"Obat sakit kepala dan demam dengan dosis ekstra.\",\n            \"shortDescription\": \"\",\n            \"categoryId\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n            \"price\": \"15000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/6tycpz4m2k4-1774700221427.jpg\",\n            \"requiresPrescription\": false,\n            \"minStockAlert\": 10,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-24T17:28:38.030Z\",\n            \"updatedAt\": \"2026-03-28T12:17:10.654Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n                \"name\": \"Obat Bebas\",\n                \"slug\": \"obat-bebas\",\n                \"icon\": \"pill\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 193,\n            \"nearestExpiry\": \"2026-09-30T00:00:00.000Z\",\n            \"isAvailable\": true\n        }\n    ],\n    \"pagination\": {\n        \"total\": 12,\n        \"page\": 1,\n        \"limit\": 20,\n        \"totalPages\": 1\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Products - Filter Category",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"All returned items are in filtered category\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    jsonData.data.forEach(product => {",
+              "        pm.expect(product.category.slug).to.equal(\"obat-keras\");",
+              "    });",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/products?category=obat-keras",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "obat-keras"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Products - Filter Category",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?category=obat-keras",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "obat-keras"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:37:08 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/products"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::f7fbg-1780994227328-e19816ca9177"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": [],\n    \"pagination\": {\n        \"total\": 0,\n        \"page\": 1,\n        \"limit\": 20,\n        \"totalPages\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Products - Search Term Match",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response has search results\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.be.an(\"array\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/products?q=paramex",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "paramex"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Products - Search Term Match",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?q=paramex",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "paramex"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:37:39 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/products"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::ghqrt-1780994257095-ce2cc23a18aa"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": [\n        {\n            \"id\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n            \"name\": \"Paramex 250mg\",\n            \"slug\": \"paramex-250mg-x4p5x\",\n            \"description\": \"Obat ini memiliki risiko untuk ibu hamil dan janin. Konsultasikan dengan dokter dan pertimbangkan alternatif lain.\\nHati-hati penggunaan pada penderita porphyria akut karena dapat menimbulkan porphyrinogenic\\nBila setelah 5 hari nyeri tidak hilang, segera hubungi dokter\\nObat ini dapat menyebabkan kantuk\\nPenggunaan pada penderita yang mengkonsumsi alkohol dapat meningkatkan resiko kerusakan hati\\nEfek Samping: Mengantuk. Dosis besar atau terapi jangka panjang dapat menyebabkan kerusakan hati\\n\\nKomposisi:\\nParacetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg, Dexchlorpheniramine maleate 1 mg\",\n            \"shortDescription\": \"PARAMEX merupakan obat dengan kandungan Paracetamol, Propyphenazone, Caffeine, Dexchlorpheniramine maleate. Obat ini dapat digunakan untuk meringankan sakit kepala dan sakit gigi\",\n            \"categoryId\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n            \"price\": \"5000\",\n            \"imageUrl\": \"https://kbagwtjtnlfhpmqmvlzu.supabase.co/storage/v1/object/public/products/product-images/nwj2huml49-1774715005624.jpg\",\n            \"requiresPrescription\": true,\n            \"minStockAlert\": 1,\n            \"status\": \"active\",\n            \"aiKeywords\": null,\n            \"createdAt\": \"2026-03-28T16:25:36.564Z\",\n            \"updatedAt\": \"2026-05-05T05:01:55.881Z\",\n            \"medicineClassId\": null,\n            \"packagingUnitId\": null,\n            \"rackId\": null,\n            \"category\": {\n                \"id\": \"1902728f-17fe-4026-9c3e-0615f9b0868f\",\n                \"name\": \"Obat Bebas\",\n                \"slug\": \"obat-bebas\",\n                \"icon\": \"pill\",\n                \"sortOrder\": 0,\n                \"isActive\": true,\n                \"createdAt\": \"2026-03-24T16:54:34.000Z\"\n            },\n            \"totalStock\": 73,\n            \"nearestExpiry\": \"2029-02-22T00:00:00.000Z\",\n            \"isAvailable\": true\n        }\n    ],\n    \"pagination\": {\n        \"total\": 1,\n        \"page\": 1,\n        \"limit\": 20,\n        \"totalPages\": 1\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Products - Search Non-existent",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response is empty\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.be.an(\"array\").that.is.empty;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/products?q=nonexistentdrug123",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "nonexistentdrug123"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Products - Search Non-existent",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?q=nonexistentdrug123",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "nonexistentdrug123"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:38:42 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/products"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::gk5x8-1780994321203-44b762a0bdd5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": [],\n    \"pagination\": {\n        \"total\": 0,\n        \"page\": 1,\n        \"limit\": 20,\n        \"totalPages\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Create Order Success",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    console.log(\"POST Create Order Success RESPONSE:\", pm.response.text());",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test(\"Order confirmation details returned\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.be.true;",
+              "    pm.expect(jsonData.orderNumber).to.be.a(\"string\");",
+              "    pm.expect(jsonData.orderId).to.be.a(\"string\");",
+              "    pm.environment.set(\"LATEST_ORDER_ID\", jsonData.orderId);",
+              "    pm.environment.set(\"LATEST_ORDER_NUMBER\", jsonData.orderNumber);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Cypress Postman Tester\",\n  \"customerPhone\": \"081234567890\",\n  \"paymentMethod\": \"cash\",\n  \"notes\": \"Pesanan diambil pukul 14:00\",\n  \"items\": [\n    {\n      \"productId\": \"{{product_id}}\",\n      \"quantity\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Create Order Success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerName\": \"Cypress Postman Tester\",\n  \"customerPhone\": \"081234567890\",\n  \"paymentMethod\": \"cash\",\n  \"notes\": \"Pesanan diambil pukul 14:00\",\n  \"items\": [\n    {\n      \"productId\": \"{{product_id}}\",\n      \"quantity\": 1\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/orders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:39:12 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::5cxhq-1780994347299-577aa035b1c4"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"orderNumber\": \"PT-20260609-5523\",\n    \"orderId\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Create Order - Empty Name",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    console.log(\"POST Create Order - Empty Name RESPONSE:\", pm.response.text());",
+              "    pm.response.to.have.status(400);",
+              "});",
+              "pm.test(\"Error payload explains invalid name input\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.error).to.equal(\"Invalid input\");",
+              "    pm.expect(jsonData.details.customerName._errors).to.contain(\"Nama minimal 2 karakter\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"\",\n  \"customerPhone\": \"081234567890\",\n  \"paymentMethod\": \"cash\",\n  \"items\": [\n    {\n      \"productId\": \"{{product_id}}\",\n      \"quantity\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Create Order - Empty Name",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerName\": \"\",\n  \"customerPhone\": \"081234567890\",\n  \"paymentMethod\": \"cash\",\n  \"items\": [\n    {\n      \"productId\": \"{{product_id}}\",\n      \"quantity\": 1\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/orders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 400
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:39:32 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::rcxm6-1780994372734-096b91e277fd"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid input\",\n    \"details\": {\n        \"_errors\": [],\n        \"customerName\": {\n            \"_errors\": [\n                \"Nama minimal 2 karakter\"\n            ]\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Create Order - Invalid Phone",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});",
+              "pm.test(\"Error payload explains invalid phone input\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.error).to.equal(\"Invalid input\");",
+              "    pm.expect(jsonData.details.customerPhone._errors).to.contain(\"Nomor telepon tidak valid\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Test Customer\",\n  \"customerPhone\": \"123\",\n  \"paymentMethod\": \"cash\",\n  \"items\": [\n    {\n      \"productId\": \"{{product_id}}\",\n      \"quantity\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Create Order - Invalid Phone",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerName\": \"Test Customer\",\n  \"customerPhone\": \"123\",\n  \"paymentMethod\": \"cash\",\n  \"items\": [\n    {\n      \"productId\": \"{{product_id}}\",\n      \"quantity\": 1\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/orders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 400
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:41:09 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::gsb9f-1780994469858-dfc36279827f"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid input\",\n    \"details\": {\n        \"_errors\": [],\n        \"customerPhone\": {\n            \"_errors\": [\n                \"Nomor telepon tidak valid\"\n            ]\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Create Order - Empty Items",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});",
+              "pm.test(\"Error payload explains empty items\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.error).to.equal(\"Invalid input\");",
+              "    pm.expect(jsonData.details.items._errors).to.contain(\"Keranjang kosong\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Test Customer\",\n  \"customerPhone\": \"081234567890\",\n  \"paymentMethod\": \"cash\",\n  \"items\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/orders",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Create Order - Empty Items",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerName\": \"Test Customer\",\n  \"customerPhone\": \"081234567890\",\n  \"paymentMethod\": \"cash\",\n  \"items\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/orders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 400
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:41:27 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::ww9qv-1780994486756-7e94b406525e"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid input\",\n    \"details\": {\n        \"_errors\": [],\n        \"items\": {\n            \"_errors\": [\n                \"Keranjang kosong\"\n            ]\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET List Orders by Customer Phone",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Verify orders array matches search criteria\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.orders).to.be.an(\"array\");",
+              "    jsonData.orders.forEach(order => {",
+              "        pm.expect(order.customerPhone).to.equal(\"081234567890\");",
+              "    });",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/orders?phone=081234567890",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "phone",
+              "value": "081234567890"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET List Orders by Customer Phone",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/orders?phone=081234567890",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "phone",
+                  "value": "081234567890"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:41:46 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::9w66t-1780994503633-34d54f3ac6fc"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"orders\": [\n        {\n            \"id\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n            \"orderNumber\": \"PT-20260609-5523\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan diambil pukul 14:00\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T08:39:09.297Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n            \"updatedAt\": \"2026-06-09T08:39:09.299Z\",\n            \"items\": [\n                {\n                    \"id\": \"d6005711-aa24-45c5-b21e-0643ba964e3e\",\n                    \"orderId\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T08:39:09.299Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"4430defe-6fa5-432d-8e90-82a75fa204d3\",\n            \"orderNumber\": \"PT-20260609-2360\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan diambil pukul 14:00\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:54:35.048Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:54:35.049Z\",\n            \"updatedAt\": \"2026-06-09T05:54:35.049Z\",\n            \"items\": [\n                {\n                    \"id\": \"cb9904ef-663a-449a-8e65-67146da0b679\",\n                    \"orderId\": \"4430defe-6fa5-432d-8e90-82a75fa204d3\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:54:35.049Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"ffa129eb-c559-4ff9-96bb-5e3223ce7979\",\n            \"orderNumber\": \"PT-20260609-5552\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan diambil pukul 14:00\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:53:14.976Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:53:14.977Z\",\n            \"updatedAt\": \"2026-06-09T05:53:14.977Z\",\n            \"items\": [\n                {\n                    \"id\": \"241d2a3b-21e0-45a5-98fe-ca575ba0d164\",\n                    \"orderId\": \"ffa129eb-c559-4ff9-96bb-5e3223ce7979\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:53:14.977Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"8908ef58-1f48-4e4a-a3e1-ca48bc35371f\",\n            \"orderNumber\": \"PT-20260609-3371\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan diambil pukul 14:00\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:51:09.482Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:51:09.483Z\",\n            \"updatedAt\": \"2026-06-09T05:51:09.483Z\",\n            \"items\": [\n                {\n                    \"id\": \"3c7bb592-bb0b-49ec-b474-80f29e1bbd25\",\n                    \"orderId\": \"8908ef58-1f48-4e4a-a3e1-ca48bc35371f\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:51:09.483Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"b5445283-d3da-4726-be34-9eb2b14eddb5\",\n            \"orderNumber\": \"PT-20260609-4843\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"18000\",\n            \"total\": \"18000\",\n            \"pickupTime\": null,\n            \"notes\": null,\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:46:38.108Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:46:38.109Z\",\n            \"updatedAt\": \"2026-06-09T05:46:38.109Z\",\n            \"items\": [\n                {\n                    \"id\": \"9d3e9318-b45e-4410-b8c5-438146e08cd4\",\n                    \"orderId\": \"b5445283-d3da-4726-be34-9eb2b14eddb5\",\n                    \"productId\": \"269d852b-5ff5-4b0b-aaa8-38242c6d6e48\",\n                    \"productName\": \"Betadine Antiseptic 30ml\",\n                    \"productPrice\": \"18000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"18000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:46:38.109Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"320829f9-1584-4a1b-b978-cc0e7d440f05\",\n            \"orderNumber\": \"PT-20260609-9691\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"18000\",\n            \"total\": \"18000\",\n            \"pickupTime\": null,\n            \"notes\": null,\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:46:23.230Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:46:23.231Z\",\n            \"updatedAt\": \"2026-06-09T05:46:23.231Z\",\n            \"items\": [\n                {\n                    \"id\": \"6122e96d-ac60-485d-8083-56611e93d510\",\n                    \"orderId\": \"320829f9-1584-4a1b-b978-cc0e7d440f05\",\n                    \"productId\": \"269d852b-5ff5-4b0b-aaa8-38242c6d6e48\",\n                    \"productName\": \"Betadine Antiseptic 30ml\",\n                    \"productPrice\": \"18000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"18000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:46:23.231Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"fa99bf7d-0a44-446f-9741-c8795dd18dea\",\n            \"orderNumber\": \"PT-20260609-3066\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"18000\",\n            \"total\": \"18000\",\n            \"pickupTime\": null,\n            \"notes\": null,\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:46:05.447Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:46:05.448Z\",\n            \"updatedAt\": \"2026-06-09T05:46:05.448Z\",\n            \"items\": [\n                {\n                    \"id\": \"5812f2f7-5d0e-4780-9e3c-9cda945fefda\",\n                    \"orderId\": \"fa99bf7d-0a44-446f-9741-c8795dd18dea\",\n                    \"productId\": \"269d852b-5ff5-4b0b-aaa8-38242c6d6e48\",\n                    \"productName\": \"Betadine Antiseptic 30ml\",\n                    \"productPrice\": \"18000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"18000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:46:05.448Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"df50e5d4-e72c-4859-80e9-8ed3977d855e\",\n            \"orderNumber\": \"PT-20260609-7363\",\n            \"userId\": null,\n            \"customerName\": \"Cypress Postman Tester\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"18000\",\n            \"total\": \"18000\",\n            \"pickupTime\": null,\n            \"notes\": null,\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:45:41.455Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:45:41.456Z\",\n            \"updatedAt\": \"2026-06-09T05:45:41.456Z\",\n            \"items\": [\n                {\n                    \"id\": \"9016b43d-06e4-48e7-a9db-42b8e4e98565\",\n                    \"orderId\": \"df50e5d4-e72c-4859-80e9-8ed3977d855e\",\n                    \"productId\": \"269d852b-5ff5-4b0b-aaa8-38242c6d6e48\",\n                    \"productName\": \"Betadine Antiseptic 30ml\",\n                    \"productPrice\": \"18000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"18000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:45:41.456Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"88fe7192-ee3a-465c-8ff7-6861ee12ba48\",\n            \"orderNumber\": \"PT-20260609-5245\",\n            \"userId\": null,\n            \"customerName\": \"Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": null,\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T05:34:41.151Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T05:34:41.152Z\",\n            \"updatedAt\": \"2026-06-09T05:34:41.152Z\",\n            \"items\": [\n                {\n                    \"id\": \"2d91b908-ef0e-4f2b-baa2-dcfd4c88a194\",\n                    \"orderId\": \"88fe7192-ee3a-465c-8ff7-6861ee12ba48\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T05:34:41.152Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"51ccafd1-bbcf-45bd-bd10-a18df5eb5cb6\",\n            \"orderNumber\": \"PT-20260609-9438\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:25:59.992Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:25:59.994Z\",\n            \"updatedAt\": \"2026-06-09T04:25:59.994Z\",\n            \"items\": [\n                {\n                    \"id\": \"f7142f9d-47a9-446c-aee9-9ded0b008529\",\n                    \"orderId\": \"51ccafd1-bbcf-45bd-bd10-a18df5eb5cb6\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:25:59.994Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"bf36633d-9857-45a2-8631-31e3ec5518b9\",\n            \"orderNumber\": \"PT-20260609-5322\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:24:51.983Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:24:51.984Z\",\n            \"updatedAt\": \"2026-06-09T04:24:51.984Z\",\n            \"items\": [\n                {\n                    \"id\": \"916e09a3-ba5a-4167-a4ca-53dc33b0a49e\",\n                    \"orderId\": \"bf36633d-9857-45a2-8631-31e3ec5518b9\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:24:51.984Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"401ec55d-5825-459f-915f-be72140f2eb3\",\n            \"orderNumber\": \"PT-20260609-8876\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:17:46.747Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:17:46.749Z\",\n            \"updatedAt\": \"2026-06-09T04:17:46.749Z\",\n            \"items\": [\n                {\n                    \"id\": \"e3460881-a807-48fd-99fd-0993ad807f6e\",\n                    \"orderId\": \"401ec55d-5825-459f-915f-be72140f2eb3\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:17:46.749Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"132dbf57-2642-4032-854c-0c0ff1b31b51\",\n            \"orderNumber\": \"PT-20260609-4692\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:17:30.427Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:17:30.428Z\",\n            \"updatedAt\": \"2026-06-09T04:17:30.428Z\",\n            \"items\": [\n                {\n                    \"id\": \"596dc68b-984c-4b00-94c3-3d739c1d22eb\",\n                    \"orderId\": \"132dbf57-2642-4032-854c-0c0ff1b31b51\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:17:30.428Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"419ccddf-e03f-48ab-b5c1-087ab679917d\",\n            \"orderNumber\": \"PT-20260609-9849\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:08:18.923Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:08:18.925Z\",\n            \"updatedAt\": \"2026-06-09T04:08:18.925Z\",\n            \"items\": [\n                {\n                    \"id\": \"f2635db9-1918-4896-9ac0-fee1ac69c7cf\",\n                    \"orderId\": \"419ccddf-e03f-48ab-b5c1-087ab679917d\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:08:18.925Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"58ab29bc-c974-4c4a-8249-45c78c3d62ba\",\n            \"orderNumber\": \"PT-20260609-8492\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:05:11.837Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:05:11.838Z\",\n            \"updatedAt\": \"2026-06-09T04:05:11.838Z\",\n            \"items\": [\n                {\n                    \"id\": \"bdd37b91-2a1a-4fe0-a687-a88025f2986e\",\n                    \"orderId\": \"58ab29bc-c974-4c4a-8249-45c78c3d62ba\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:05:11.838Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"3ab74f37-dd10-45d6-ac70-069124fb8598\",\n            \"orderNumber\": \"PT-20260609-6451\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:01:21.810Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:01:21.811Z\",\n            \"updatedAt\": \"2026-06-09T04:01:21.811Z\",\n            \"items\": [\n                {\n                    \"id\": \"fccc464e-f87a-4699-a1a6-e7910af620ed\",\n                    \"orderId\": \"3ab74f37-dd10-45d6-ac70-069124fb8598\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:01:21.811Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"baf7fb06-f916-440b-ad5d-55c7cb283e04\",\n            \"orderNumber\": \"PT-20260609-8875\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T04:00:14.772Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T04:00:14.773Z\",\n            \"updatedAt\": \"2026-06-09T04:00:14.773Z\",\n            \"items\": [\n                {\n                    \"id\": \"0361238c-b0b1-4d56-8b86-5999d6bec9c0\",\n                    \"orderId\": \"baf7fb06-f916-440b-ad5d-55c7cb283e04\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T04:00:14.773Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"f8fb8dfc-f62f-4426-b8aa-9733d22c7498\",\n            \"orderNumber\": \"PT-20260609-6585\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-10T03:50:46.624Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-09T03:50:46.626Z\",\n            \"updatedAt\": \"2026-06-09T03:50:46.626Z\",\n            \"items\": [\n                {\n                    \"id\": \"b2002624-9956-4400-b58b-4c738d41b2a7\",\n                    \"orderId\": \"f8fb8dfc-f62f-4426-b8aa-9733d22c7498\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-09T03:50:46.626Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"9c7e2430-e4c7-4ae8-95c1-7e0ed46fa0e7\",\n            \"orderNumber\": \"PT-20260608-3052\",\n            \"userId\": null,\n            \"customerName\": \"Postman API Runner\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Pesanan dari automated Postman runner\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T15:40:42.587Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T15:40:42.588Z\",\n            \"updatedAt\": \"2026-06-08T15:40:42.588Z\",\n            \"items\": [\n                {\n                    \"id\": \"1440c2ed-498d-4401-a4f0-e02dc7049864\",\n                    \"orderId\": \"9c7e2430-e4c7-4ae8-95c1-7e0ed46fa0e7\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T15:40:42.588Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"962cfdc3-a5f8-4e43-afff-226480266e01\",\n            \"orderNumber\": \"PT-20260608-4957\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T14:28:29.860Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T14:28:29.861Z\",\n            \"updatedAt\": \"2026-06-08T14:28:29.861Z\",\n            \"items\": [\n                {\n                    \"id\": \"a164b2b5-0460-4be9-86c8-0b5075b493e5\",\n                    \"orderId\": \"962cfdc3-a5f8-4e43-afff-226480266e01\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T14:28:29.861Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"f6538211-236f-4e5c-ac4b-4ab4cc0a39c4\",\n            \"orderNumber\": \"PT-20260608-3031\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Catatan dari Cypress E2E test\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T14:26:31.688Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T14:26:31.689Z\",\n            \"updatedAt\": \"2026-06-08T14:26:31.689Z\",\n            \"items\": [\n                {\n                    \"id\": \"0ad0ed7b-92df-475a-ba4e-b56bc1e4105e\",\n                    \"orderId\": \"f6538211-236f-4e5c-ac4b-4ab4cc0a39c4\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T14:26:31.689Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"15a361c3-1ec6-43bf-8876-d1ffc0113469\",\n            \"orderNumber\": \"PT-20260608-9631\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T14:22:14.533Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T14:22:14.534Z\",\n            \"updatedAt\": \"2026-06-08T14:22:14.534Z\",\n            \"items\": [\n                {\n                    \"id\": \"365c23c6-802a-462a-bd3f-238bf62646bd\",\n                    \"orderId\": \"15a361c3-1ec6-43bf-8876-d1ffc0113469\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T14:22:14.534Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"dfb3b325-92d6-4d03-a8e7-a3428021db48\",\n            \"orderNumber\": \"PT-20260608-9910\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T14:05:46.414Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T14:05:46.415Z\",\n            \"updatedAt\": \"2026-06-08T14:05:46.415Z\",\n            \"items\": [\n                {\n                    \"id\": \"72c95605-d96b-4273-8d52-be2641f4c306\",\n                    \"orderId\": \"dfb3b325-92d6-4d03-a8e7-a3428021db48\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T14:05:46.415Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"f23f3501-7734-45d0-97b8-cd0b70b8ff40\",\n            \"orderNumber\": \"PT-20260608-6336\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T13:51:06.869Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T13:51:06.871Z\",\n            \"updatedAt\": \"2026-06-08T13:51:06.871Z\",\n            \"items\": [\n                {\n                    \"id\": \"5ecdb4fd-bf09-43fe-beae-9afa18d6201a\",\n                    \"orderId\": \"f23f3501-7734-45d0-97b8-cd0b70b8ff40\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T13:51:06.871Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"ca3c02e4-4b52-4812-9d55-9a4ff4ecf29a\",\n            \"orderNumber\": \"PT-20260608-4249\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Catatan dari Cypress E2E test\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T13:48:01.433Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T13:48:01.435Z\",\n            \"updatedAt\": \"2026-06-08T13:48:01.435Z\",\n            \"items\": [\n                {\n                    \"id\": \"ea3fab9d-b678-4b94-8deb-380eb7365b8b\",\n                    \"orderId\": \"ca3c02e4-4b52-4812-9d55-9a4ff4ecf29a\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T13:48:01.435Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"00ecf04a-89be-4216-b665-3ece800e1144\",\n            \"orderNumber\": \"PT-20260608-6503\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T13:21:22.093Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T13:21:22.094Z\",\n            \"updatedAt\": \"2026-06-08T13:21:22.094Z\",\n            \"items\": [\n                {\n                    \"id\": \"abdabf29-c191-4e45-a7d1-7cba2c182bef\",\n                    \"orderId\": \"00ecf04a-89be-4216-b665-3ece800e1144\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T13:21:22.094Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"6352b0be-9b85-46c5-9fa4-ff293eea9769\",\n            \"orderNumber\": \"PT-20260608-8652\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T05:15:28.735Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T05:15:28.736Z\",\n            \"updatedAt\": \"2026-06-09T00:35:25.359Z\",\n            \"items\": [\n                {\n                    \"id\": \"95ec3818-3acf-4182-be2e-53faa41efea7\",\n                    \"orderId\": \"6352b0be-9b85-46c5-9fa4-ff293eea9769\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T05:15:28.736Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"751f4fba-e3f5-41cd-8a64-d5f141385fda\",\n            \"orderNumber\": \"PT-20260608-2957\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Catatan dari Cypress E2E test\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T05:13:50.624Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T05:13:50.625Z\",\n            \"updatedAt\": \"2026-06-09T00:35:24.257Z\",\n            \"items\": [\n                {\n                    \"id\": \"87b1aa88-4036-427f-af5e-95d7c28cc7eb\",\n                    \"orderId\": \"751f4fba-e3f5-41cd-8a64-d5f141385fda\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T05:13:50.625Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"519dca10-48e6-462a-8d3c-a9079b170bbb\",\n            \"orderNumber\": \"PT-20260608-8636\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T04:48:12.304Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T04:48:12.306Z\",\n            \"updatedAt\": \"2026-06-09T00:35:23.155Z\",\n            \"items\": [\n                {\n                    \"id\": \"cda9267b-9403-4c66-851e-ab5a98d333e1\",\n                    \"orderId\": \"519dca10-48e6-462a-8d3c-a9079b170bbb\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T04:48:12.306Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"3783b0c0-b9c2-4232-802d-48beca41e813\",\n            \"orderNumber\": \"PT-20260608-6617\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T04:30:49.641Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T04:30:49.642Z\",\n            \"updatedAt\": \"2026-06-09T00:35:22.053Z\",\n            \"items\": [\n                {\n                    \"id\": \"d7826aa6-7c1b-4ec3-badf-8826aa86f032\",\n                    \"orderId\": \"3783b0c0-b9c2-4232-802d-48beca41e813\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T04:30:49.642Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"c04e4983-4a71-4321-a783-4aada2c8555b\",\n            \"orderNumber\": \"PT-20260608-9729\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T04:18:03.834Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T04:18:03.835Z\",\n            \"updatedAt\": \"2026-06-09T00:35:20.946Z\",\n            \"items\": [\n                {\n                    \"id\": \"df53f7bb-540d-492d-9ff5-55b3f0c7f0a1\",\n                    \"orderId\": \"c04e4983-4a71-4321-a783-4aada2c8555b\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T04:18:03.835Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"529b2001-741b-47d6-aca7-ec2e5dc35f97\",\n            \"orderNumber\": \"PT-20260608-3041\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Catatan dari Cypress E2E test\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T04:16:30.184Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T04:16:30.185Z\",\n            \"updatedAt\": \"2026-06-09T00:35:19.844Z\",\n            \"items\": [\n                {\n                    \"id\": \"b48070bd-2c80-4209-b079-04e8e8a86074\",\n                    \"orderId\": \"529b2001-741b-47d6-aca7-ec2e5dc35f97\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T04:16:30.185Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"948aec54-a6b4-4417-8355-49c356be5422\",\n            \"orderNumber\": \"PT-20260608-5407\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T03:57:31.700Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T03:57:31.703Z\",\n            \"updatedAt\": \"2026-06-09T00:35:18.521Z\",\n            \"items\": [\n                {\n                    \"id\": \"81998062-3c94-4bc6-8d0f-d3139530fa0d\",\n                    \"orderId\": \"948aec54-a6b4-4417-8355-49c356be5422\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T03:57:31.703Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"bfbfdf8e-1057-43c7-9345-f4287c6f9555\",\n            \"orderNumber\": \"PT-20260608-6316\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"pending\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Catatan dari Cypress E2E test\",\n            \"cancelledReason\": null,\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": null,\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-09T03:56:03.425Z\",\n            \"reminder6hSent\": true,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-08T03:56:03.427Z\",\n            \"updatedAt\": \"2026-06-09T00:35:17.420Z\",\n            \"items\": [\n                {\n                    \"id\": \"5bdd9ea8-21ba-446d-bfd0-33be6ed3e646\",\n                    \"orderId\": \"bfbfdf8e-1057-43c7-9345-f4287c6f9555\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-08T03:56:03.427Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"416f171c-e8fc-427c-a428-d77ec6fb4a0b\",\n            \"orderNumber\": \"PT-20260607-3453\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T08:12:13.414Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T08:12:13.415Z\",\n            \"updatedAt\": \"2026-06-09T00:35:11.241Z\",\n            \"items\": [\n                {\n                    \"id\": \"7a4a9659-5b00-4a14-97fe-ef9f73b3ee61\",\n                    \"orderId\": \"416f171c-e8fc-427c-a428-d77ec6fb4a0b\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T08:12:13.415Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"99733f43-704e-44d0-b84f-b937ce5f663e\",\n            \"orderNumber\": \"PT-20260607-6851\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T08:10:14.959Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T08:10:14.960Z\",\n            \"updatedAt\": \"2026-06-09T00:35:06.827Z\",\n            \"items\": [\n                {\n                    \"id\": \"9ad2bab6-a02c-4e77-999c-304abad86f92\",\n                    \"orderId\": \"99733f43-704e-44d0-b84f-b937ce5f663e\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T08:10:14.960Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"fa32f447-bb5f-4685-b35f-e6db336529b3\",\n            \"orderNumber\": \"PT-20260607-2086\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T08:07:02.136Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T08:07:02.138Z\",\n            \"updatedAt\": \"2026-06-09T00:35:05.710Z\",\n            \"items\": [\n                {\n                    \"id\": \"1f23c874-382d-41a7-8b7e-a90ce917e2b3\",\n                    \"orderId\": \"fa32f447-bb5f-4685-b35f-e6db336529b3\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T08:07:02.138Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"acccfedd-f9d7-4015-81f5-4820ba892c26\",\n            \"orderNumber\": \"PT-20260607-2740\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T08:06:19.372Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T08:06:19.374Z\",\n            \"updatedAt\": \"2026-06-09T00:35:13.445Z\",\n            \"items\": [\n                {\n                    \"id\": \"07d83c3a-a133-426e-a0b1-c2ddaa706482\",\n                    \"orderId\": \"acccfedd-f9d7-4015-81f5-4820ba892c26\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T08:06:19.374Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a66c85b0-d059-42ef-b5d4-30c2afcd1113\",\n            \"orderNumber\": \"PT-20260607-5171\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T08:03:50.745Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T08:03:50.748Z\",\n            \"updatedAt\": \"2026-06-09T00:35:12.343Z\",\n            \"items\": [\n                {\n                    \"id\": \"aebe5079-2bac-4525-b725-701b36b29bcc\",\n                    \"orderId\": \"a66c85b0-d059-42ef-b5d4-30c2afcd1113\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T08:03:50.748Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"04b8a42a-1e85-482f-958e-74a52954002f\",\n            \"orderNumber\": \"PT-20260607-6391\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Order Test\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T07:41:08.756Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T07:41:08.758Z\",\n            \"updatedAt\": \"2026-06-09T00:35:09.035Z\",\n            \"items\": [\n                {\n                    \"id\": \"4f3ece07-24af-4bf4-a12a-c3cf194979c7\",\n                    \"orderId\": \"04b8a42a-1e85-482f-958e-74a52954002f\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T07:41:08.758Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"871a4c20-a5fe-41a3-9cae-bf08dc05fa64\",\n            \"orderNumber\": \"PT-20260607-8760\",\n            \"userId\": \"e117545a-6926-484e-af82-e102953ce44b\",\n            \"customerName\": \"Cypress Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"5000\",\n            \"total\": \"5000\",\n            \"pickupTime\": null,\n            \"notes\": \"Catatan dari Cypress E2E test\",\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-06-09T00:35:01.302Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-06-08T07:30:21.505Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-06-07T07:30:21.506Z\",\n            \"updatedAt\": \"2026-06-09T00:35:07.932Z\",\n            \"items\": [\n                {\n                    \"id\": \"576c11b2-38a1-4a4d-8394-a893665876f2\",\n                    \"orderId\": \"871a4c20-a5fe-41a3-9cae-bf08dc05fa64\",\n                    \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                    \"productName\": \"Paramex 250mg\",\n                    \"productPrice\": \"5000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"5000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-06-07T07:30:21.506Z\"\n                }\n            ]\n        },\n        {\n            \"id\": \"d2c36237-4585-43b6-be14-6d2bb457e8ea\",\n            \"orderNumber\": \"PT-20260327-9018\",\n            \"userId\": null,\n            \"customerName\": \"Test User\",\n            \"customerPhone\": \"081234567890\",\n            \"orderType\": \"online\",\n            \"status\": \"cancelled\",\n            \"paymentMethod\": \"cash\",\n            \"paymentStatus\": \"unpaid\",\n            \"subtotal\": \"10000\",\n            \"total\": \"10000\",\n            \"pickupTime\": null,\n            \"notes\": null,\n            \"cancelledReason\": \"Auto-cancelled: pickup time exceeded\",\n            \"confirmedAt\": null,\n            \"readyAt\": null,\n            \"completedAt\": null,\n            \"cancelledAt\": \"2026-04-04T00:33:02.219Z\",\n            \"processedById\": null,\n            \"autoCancelAt\": \"2026-03-28T09:40:36.880Z\",\n            \"reminder6hSent\": false,\n            \"reminder2hSent\": false,\n            \"createdAt\": \"2026-03-27T09:40:36.884Z\",\n            \"updatedAt\": \"2026-04-04T00:33:08.786Z\",\n            \"items\": [\n                {\n                    \"id\": \"94553e18-e869-4bc6-a4da-6c00daa25458\",\n                    \"orderId\": \"d2c36237-4585-43b6-be14-6d2bb457e8ea\",\n                    \"productId\": \"dce9c190-532b-4683-8805-a44cd08ab31c\",\n                    \"productName\": \"Panadol\",\n                    \"productPrice\": \"10000\",\n                    \"quantity\": 1,\n                    \"subtotal\": \"10000\",\n                    \"batchAllocations\": null,\n                    \"createdAt\": \"2026-03-27T09:40:36.884Z\"\n                }\n            ]\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Retrieve by Order UUID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Order fields matches detail requirements\", function () {",
+              "    const order = pm.response.json().order;",
+              "    pm.expect(order).to.have.property(\"orderNumber\");",
+              "    pm.expect(order.items).to.be.an(\"array\").that.is.not.empty;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/orders/{{LATEST_ORDER_ID}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders",
+            "{{LATEST_ORDER_ID}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Retrieve by Order UUID",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/orders/{{LATEST_ORDER_ID}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "{{LATEST_ORDER_ID}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:42:22 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders/[id]"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::fszzv-1780994540324-9f249a5f5a06"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"order\": {\n        \"id\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n        \"orderNumber\": \"PT-20260609-5523\",\n        \"userId\": null,\n        \"customerName\": \"Cypress Postman Tester\",\n        \"customerPhone\": \"081234567890\",\n        \"orderType\": \"online\",\n        \"status\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"paymentStatus\": \"unpaid\",\n        \"subtotal\": \"5000\",\n        \"total\": \"5000\",\n        \"pickupTime\": null,\n        \"notes\": \"Pesanan diambil pukul 14:00\",\n        \"cancelledReason\": null,\n        \"confirmedAt\": null,\n        \"readyAt\": null,\n        \"completedAt\": null,\n        \"cancelledAt\": null,\n        \"processedById\": null,\n        \"autoCancelAt\": \"2026-06-10T08:39:09.297Z\",\n        \"reminder6hSent\": false,\n        \"reminder2hSent\": false,\n        \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n        \"updatedAt\": \"2026-06-09T08:39:09.299Z\",\n        \"items\": [\n            {\n                \"id\": \"d6005711-aa24-45c5-b21e-0643ba964e3e\",\n                \"orderId\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n                \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                \"productName\": \"Paramex 250mg\",\n                \"productPrice\": \"5000\",\n                \"quantity\": 1,\n                \"subtotal\": \"5000\",\n                \"batchAllocations\": null,\n                \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n                \"product\": {\n                    \"name\": \"Paramex 250mg\",\n                    \"price\": \"5000\"\n                }\n            }\n        ],\n        \"transaction\": {\n            \"id\": \"4880e996-06b4-4a95-b11e-87c40aafc498\",\n            \"orderId\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n            \"paymentMethod\": \"cash\",\n            \"amount\": \"5000\",\n            \"midtransOrderId\": null,\n            \"midtransTransactionId\": null,\n            \"qrisUrl\": null,\n            \"status\": \"pending\",\n            \"paidAt\": null,\n            \"processedById\": null,\n            \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n            \"updatedAt\": \"2026-06-09T08:39:09.299Z\",\n            \"amountPaid\": null,\n            \"changeGiven\": null\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Retrieve by Order Number",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Order matches number\", function () {",
+              "    const order = pm.response.json().order;",
+              "    pm.expect(order.orderNumber).to.equal(pm.environment.get(\"LATEST_ORDER_NUMBER\"));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/orders/{{LATEST_ORDER_NUMBER}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders",
+            "{{LATEST_ORDER_NUMBER}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Retrieve by Order Number",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/orders/{{LATEST_ORDER_NUMBER}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "{{LATEST_ORDER_NUMBER}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:42:45 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders/[id]"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::vzrtx-1780994562529-b2389e8212f6"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"order\": {\n        \"id\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n        \"orderNumber\": \"PT-20260609-5523\",\n        \"userId\": null,\n        \"customerName\": \"Cypress Postman Tester\",\n        \"customerPhone\": \"081234567890\",\n        \"orderType\": \"online\",\n        \"status\": \"pending\",\n        \"paymentMethod\": \"cash\",\n        \"paymentStatus\": \"unpaid\",\n        \"subtotal\": \"5000\",\n        \"total\": \"5000\",\n        \"pickupTime\": null,\n        \"notes\": \"Pesanan diambil pukul 14:00\",\n        \"cancelledReason\": null,\n        \"confirmedAt\": null,\n        \"readyAt\": null,\n        \"completedAt\": null,\n        \"cancelledAt\": null,\n        \"processedById\": null,\n        \"autoCancelAt\": \"2026-06-10T08:39:09.297Z\",\n        \"reminder6hSent\": false,\n        \"reminder2hSent\": false,\n        \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n        \"updatedAt\": \"2026-06-09T08:39:09.299Z\",\n        \"items\": [\n            {\n                \"id\": \"d6005711-aa24-45c5-b21e-0643ba964e3e\",\n                \"orderId\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n                \"productId\": \"bc7a692e-6589-4c8d-a2aa-f460de48cebe\",\n                \"productName\": \"Paramex 250mg\",\n                \"productPrice\": \"5000\",\n                \"quantity\": 1,\n                \"subtotal\": \"5000\",\n                \"batchAllocations\": null,\n                \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n                \"product\": {\n                    \"name\": \"Paramex 250mg\",\n                    \"price\": \"5000\"\n                }\n            }\n        ],\n        \"transaction\": {\n            \"id\": \"4880e996-06b4-4a95-b11e-87c40aafc498\",\n            \"orderId\": \"a043464e-6204-4bd5-a618-b1e75d2a4dbb\",\n            \"paymentMethod\": \"cash\",\n            \"amount\": \"5000\",\n            \"midtransOrderId\": null,\n            \"midtransTransactionId\": null,\n            \"qrisUrl\": null,\n            \"status\": \"pending\",\n            \"paidAt\": null,\n            \"processedById\": null,\n            \"createdAt\": \"2026-06-09T08:39:09.299Z\",\n            \"updatedAt\": \"2026-06-09T08:39:09.299Z\",\n            \"amountPaid\": null,\n            \"changeGiven\": null\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET Retrieve Non-existent UUID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 404\", function () {",
+              "    pm.response.to.have.status(404);",
+              "});",
+              "pm.test(\"Error message is returned\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.error).to.equal(\"Pesanan tidak ditemukan\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/orders/invalid-uuid-111-222",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "orders",
+            "invalid-uuid-111-222"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET Retrieve Non-existent UUID",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/orders/invalid-uuid-111-222",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "invalid-uuid-111-222"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 404
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:43:04 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/orders/[id]"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::9vmlc-1780994583334-63dbe87aef99"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Pesanan tidak ditemukan\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Chat Successful Query",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"AI response text is populated\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.text).to.be.a(\"string\").that.is.not.empty;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Halo, saya sedang batuk ringan. Adakah obat yang direkomendasikan?\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/chat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "chat"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Chat Successful Query",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Halo, saya sedang batuk ringan. Adakah obat yang direkomendasikan?\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/chat",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "chat"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 500
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:44:22 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/chat"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::76z5k-1780994659154-b6c9213d4bd9"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Terjadi kesalahan saat memproses pesan Anda.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Chat Prompt for Serious Symptom",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response mentions emergency instruction\", function () {",
+              "    const text = pm.response.json().text.toLowerCase();",
+              "    const emergencyTriggered = text.includes(\"igd\") || text.includes(\"dokter\") || text.includes(\"rumah sakit\") || text.includes(\"hubungi 119\");",
+              "    pm.expect(emergencyTriggered).to.be.true;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Saya mengalami nyeri dada hebat dan sesak napas secara tiba-tiba.\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/chat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "chat"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Chat Prompt for Serious Symptom",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Saya mengalami nyeri dada hebat dan sesak napas secara tiba-tiba.\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/chat",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "chat"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:44:56 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/chat"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::84dzr-1780994694381-5d66a41c9250"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"text\": \"Gejala yang Anda sebutkan tergolong darurat medis. Saya tidak dapat merekomendasikan obat untuk kondisi ini. Segera hubungi 119 atau kunjungi IGD rumah sakit terdekat untuk mendapatkan penanganan medis segera.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST Chat Invalid Payload",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    console.log(\"POST Chat Invalid Payload RESPONSE:\", pm.response.text());",
+              "    pm.response.to.have.status(400);",
+              "});",
+              "pm.test(\"Error message matches invalid messages array\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.error).to.equal(\"Invalid messages array\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": \"not-an-array\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/chat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "chat"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST Chat Invalid Payload",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": \"not-an-array\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/chat",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "chat"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 400
+            },
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 09 Jun 2026 08:45:18 GMT"
+            },
+            {
+              "key": "server",
+              "value": "Vercel"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "key": "x-matched-path",
+              "value": "/api/chat"
+            },
+            {
+              "key": "x-vercel-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-vercel-id",
+              "value": "sin1::iad1::gzxbd-1780994718422-707cf2537960"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid messages array\"\n}"
+        }
+      ]
+    }
+  ]
+}
